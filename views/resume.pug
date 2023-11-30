@@ -1,0 +1,247 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    title Resume Page
+    meta(name='description', content='')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    // custom css
+    link(rel='stylesheet' href='/css/style.css')
+  body
+    nav.navbar.bg-white
+      .container
+        .navbar-content
+          .brand-and-toggler
+            a.navbar-brand(href='/')
+              img.navbar-brand-icon(src='/img/resume/curriculum-vitae.png', alt='')
+              span.navbar-brand-text
+                | build 
+                span resume.
+    section#about-sc
+      .container
+        .about-cnt
+          form#cv-form.cv-form(action='')
+            .cv-form-blk
+              .cv-form-row-title
+                h3 about section
+              .cv-form-row.cv-form-row-about
+                .cols-3
+                  .form-elem
+                    label.form-label(for='') First Name
+                    input.form-control.firstname(name='firstname', type='text', id='', onkeyup='generateCV()', placeholder='e.g. John')
+                    span.form-text
+                  .form-elem
+                    label.form-label(for='')
+                      | Middle Name 
+                      span.opt-text (optional)
+                    input.form-control.middlename(name='middlename', type='text', id='', onkeyup='generateCV()', placeholder='e.g. Herbert')
+                    span.form-text
+                  .form-elem
+                    label.form-label(for='') Last Name
+                    input.form-control.lastname(name='lastname', type='text', id='', onkeyup='generateCV()', placeholder='e.g. Doe')
+                    span.form-text
+                .cols-3
+                  .form-elem
+                    label.form-label(for='') Your Image
+                    input.form-control.image(name='image', type='file', id='', accept='image/*', onchange='previewImage()')
+                  .form-elem
+                    label.form-label(for='') Designation
+                    input.form-control.designation(name='designation', type='text', id='', onkeyup='generateCV()', placeholder='e.g. Sr.Accountants')
+                    span.form-text
+                  .form-elem
+                    label.form-label(for='') Address
+                    input.form-control.address(name='address', type='text', id='', onkeyup='generateCV()', placeholder='e.g. Lake Street-23')
+                    span.form-text
+                .cols-3
+                  .form-elem
+                    label.form-label(for='') Email
+                    input.form-control.email(name='email', type='text', id='', onkeyup='generateCV()', placeholder='e.g. johndoe@gmail.com')
+                    span.form-text
+                  .form-elem
+                    label.form-label(for='') Phone No:
+                    input.form-control.phoneno(name='phoneno', type='text', id='', onkeyup='generateCV()', placeholder='e.g. 456-768-798, 567.654.002')
+                    span.form-text
+                  .form-elem
+                    label.form-label(for='') Summary
+                    input.form-control.summary(name='summary', type='text', id='', onkeyup='generateCV()', placeholder='e.g. Doe')
+                    span.form-text
+            .cv-form-blk
+              .cv-form-row-title
+                h3 achievements
+              .row-separator.repeater
+                .repeater(data-repeater-list='group-a')
+                  div(data-repeater-item='')
+                    .cv-form-row.cv-form-row-achievement
+                      .cols-2
+                        .form-elem
+                          label.form-label(for='') Title
+                          input.form-control.achieve_title(name='achieve_title', type='text', id='', onkeyup='generateCV()', placeholder='e.g. johndoe@gmail.com')
+                          span.form-text
+                        .form-elem
+                          label.form-label(for='') Description
+                          input.form-control.achieve_description(name='achieve_description', type='text', id='', onkeyup='generateCV()', placeholder='e.g. johndoe@gmail.com')
+                          span.form-text
+                      button.repeater-remove-btn(data-repeater-delete='', type='button') -
+                button.repeater-add-btn(type='button', data-repeater-create='', value='Add') +
+            .cv-form-blk
+              .cv-form-row-title
+                h3 experience
+              .row-separator.repeater
+                .repeater(data-repeater-list='group-b')
+                  div(data-repeater-item='')
+                    .cv-form-row.cv-form-row-experience
+                      .cols-3
+                        .form-elem
+                          label.form-label(for='') Title
+                          input.form-control.exp_title(name='exp_title', type='text', id='', onkeyup='generateCV()')
+                          span.form-text
+                        .form-elem
+                          label.form-label(for='') Company / Organization
+                          input.form-control.exp_organization(name='exp_organization', type='text', id='', onkeyup='generateCV()')
+                          span.form-text
+                        .form-elem
+                          label.form-label(for='') Location
+                          input.form-control.exp_location(name='exp_location', type='text', id='', onkeyup='generateCV()')
+                          span.form-text
+                      .cols-3
+                        .form-elem
+                          label.form-label(for='') Start Date
+                          input.form-control.exp_start_date(name='exp_start_date', type='date', id='', onkeyup='generateCV()')
+                          span.form-text
+                        .form-elem
+                          label.form-label(for='') End Date
+                          input.form-control.exp_end_date(name='exp_end_date', type='date', id='', onkeyup='generateCV()')
+                          span.form-text
+                        .form-elem
+                          label.form-label(for='') Description
+                          input.form-control.exp_description(name='exp_description', type='text', id='', onkeyup='generateCV()')
+                          span.form-text
+                      button.repeater-remove-btn(data-repeater-delete='', type='button') -
+                button.repeater-add-btn(type='button', data-repeater-create='', value='Add') +
+            .cv-form-blk
+              .cv-form-row-title
+                h3 education
+              .row-separator.repeater
+                .repeater(data-repeater-list='group-c')
+                  div(data-repeater-item='')
+                    .cv-form-row.cv-form-row-experience
+                      .cols-3
+                        .form-elem
+                          label.form-label(for='') School
+                          input.form-control.edu_school(name='edu_school', type='text', id='', onkeyup='generateCV()')
+                          span.form-text
+                        .form-elem
+                          label.form-label(for='') Degree
+                          input.form-control.edu_degree(name='edu_degree', type='text', id='', onkeyup='generateCV()')
+                          span.form-text
+                        .form-elem
+                          label.form-label(for='') City
+                          input.form-control.edu_city(name='edu_city', type='text', id='', onkeyup='generateCV()')
+                          span.form-text
+                      .cols-3
+                        .form-elem
+                          label.form-label(for='') Start Date
+                          input.form-control.edu_start_date(name='edu_start_date', type='date', id='', onkeyup='generateCV()')
+                          span.form-text
+                        .form-elem
+                          label.form-label(for='') End Date
+                          input.form-control.edu_graduation_date(name='edu_graduation_date', type='date', id='', onkeyup='generateCV()')
+                          span.form-text
+                        .form-elem
+                          label.form-label(for='') Description
+                          input.form-control.edu_description(name='edu_description', type='text', id='', onkeyup='generateCV()')
+                          span.form-text
+                      button.repeater-remove-btn(data-repeater-delete='', type='button') -
+                button.repeater-add-btn(type='button', data-repeater-create='', value='Add') +
+            .cv-form-blk
+              .cv-form-row-title
+                h3 projects
+              .row-separator.repeater
+                .repeater(data-repeater-list='group-d')
+                  div(data-repeater-item='')
+                    .cv-form-row.cv-form-row-experience
+                      .cols-3
+                        .form-elem
+                          label.form-label(for='') Project Name
+                          input.form-control.proj_title(name='proj_title', type='text', id='', onkeyup='generateCV()')
+                          span.form-text
+                        .form-elem
+                          label.form-label(for='') Project link
+                          input.form-control.proj_link(name='proj_link', type='text', id='', onkeyup='generateCV()')
+                          span.form-text
+                        .form-elem
+                          label.form-label(for='') Description
+                          input.form-control.proj_description(name='proj_description', type='text', id='', onkeyup='generateCV()')
+                          span.form-text
+                      button.repeater-remove-btn(data-repeater-delete='', type='button') -
+                button.repeater-add-btn(type='button', data-repeater-create='', value='Add') +
+            .cv-form-blk
+              .cv-form-row-title
+                h3 skills
+              .row-separator.repeater
+                .repeater(data-repeater-list='group-e')
+                  div(data-repeater-item='')
+                    .cv-form-row.cv-form-row-skills
+                      .form-elem
+                        label.form-label(for='') Skill
+                        input.form-control.skill(name='skill', type='text', id='', onkeyup='generateCV()')
+                        span.form-text
+                      button.repeater-remove-btn(data-repeater-delete='', type='button') -
+                button.repeater-add-btn(type='button', data-repeater-create='', value='Add') +
+    section#preview-sc.print_area
+      .container
+        .preview-cnt
+          .preview-cnt-l.bg-green.text-white
+            .preview-blk
+              .preview-image
+                img#image_dsp(src='', alt='')
+              .preview-item.preview-item-name
+                span#fullname_dsp.preview-item-val.fw-6
+              .preview-item
+                span#designation_dsp.preview-item-val.text-uppercase.fw-6.ls-1
+            .preview-blk
+              .preview-blk-title
+                h3 about
+              .preview-blk-list
+                .preview-item
+                  span#phoneno_dsp.preview-item-val
+                .preview-item
+                  span#email_dsp.preview-item-val
+                .preview-item
+                  span#address_dsp.preview-item-val
+                .preview-item
+                  span#summary_dsp.preview-item-val
+            .preview-blk
+              .preview-blk-title
+                h3 skills
+              #skills_dsp.skills-items.preview-blk-list
+                // skills list here
+          .preview-cnt-r.bg-white
+            .preview-blk
+              .preview-blk-title
+                h3 Achievements
+              #achievements_dsp.achievements-items.preview-blk-list
+            .preview-blk
+              .preview-blk-title
+                h3 educations
+              #educations_dsp.educations-items.preview-blk-list
+            .preview-blk
+              .preview-blk-title
+                h3 experiences
+              #experiences_dsp.experiences-items.preview-blk-list
+            .preview-blk
+              .preview-blk-title
+                h3 projects
+              #projects_dsp.projects-items.preview-blk-list
+    section.print-btn-sc
+      .container
+        button.print-btn.btn.btn-primary(type='button', onclick='printCV()') Print CV
+    // jquery cdn
+    script(src='https://code.jquery.com/jquery-3.6.4.js', integrity='sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=', crossorigin='anonymous')
+    // jquery repeater cdn
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery.repeater/1.2.1/jquery.repeater.js', integrity='sha512-bZAXvpVfp1+9AUHQzekEZaXclsgSlAeEnMJ6LfFAvjqYUVZfcuVXeQoN5LhD7Uw0Jy4NCY9q3kbdEXbwhZUmUQ==', crossorigin='anonymous', referrerpolicy='no-referrer')
+    // custom js
+    script(src='/js/resumeJs/script.js')
+    // app js
+    script(src='/js/resumeJs/app.js')
