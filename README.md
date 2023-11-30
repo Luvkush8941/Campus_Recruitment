@@ -12,4 +12,22 @@
 
  ### Technologies Used
 
- ![Node.js](https://www.google.com/imgres?imgurl=https%3A%2F%2Fw1.pngwing.com%2Fpngs%2F885%2F534%2Fpng-transparent-green-grass-nodejs-javascript-react-mean-angularjs-logo-symbol.png&tbnid=UmKVLysM_CsRaM&vet=12ahUKEwjUk8_BluyCAxUoUGwGHeZcAQkQMygMegUIARCGAQ..i&imgrefurl=https%3A%2F%2Fwww.pngwing.com%2Fen%2Ffree-png-vtlts&docid=oenk0s-VugkxpM&w=920&h=648&q=Node.js%20logo&ved=2ahUKEwjUk8_BluyCAxUoUGwGHeZcAQkQMygMegUIARCGAQ)
+<img src="https://github.com/Luvkush8941/Campus_Recruitment/assets/105363463/f988bc1d-7a75-4051-b9b6-345cf12b5ea0"  width="200">
+
+<img src="https://github.com/Luvkush8941/Campus_Recruitment/assets/105363463/afaa09c1-ef78-40a5-9ac2-0d5ba58c03b6" width="200">
+
+ 
+<img src="https://github.com/Luvkush8941/Campus_Recruitment/assets/105363463/78721a2a-bf97-4c8e-9462-9bfce72420e1" width="200">
+
+ <img src="https://github.com/Luvkush8941/Campus_Recruitment/assets/105363463/ce4b5170-cd05-4787-be80-971bed7da1d6" width="200">
+
+ 
+<img src="https://github.com/Luvkush8941/Campus_Recruitment/assets/105363463/ca09e281-3315-48f2-839b-d86081a6d306" width="200">
+
+<img src="https://github.com/Luvkush8941/Campus_Recruitment/assets/105363463/67902c87-dcf1-4881-abcc-3431c959ae1b" width="200">
+
+<img src="https://github.com/Luvkush8941/Campus_Recruitment/assets/105363463/ba9017cc-210e-4441-b0b4-811c50271c04" width="200">
+
+
+
+
