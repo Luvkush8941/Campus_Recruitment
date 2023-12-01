@@ -196,7 +196,6 @@ exports.updateMe = async (req , res, next) => {
   // Adding photo property to the filteredBody object from req.filename
 
    if (req.file) {
-    
     filteredBody.photo = req.file.filename;
   }
 
@@ -250,5 +249,4 @@ exports.deleteUser = (req, res) => {
     });
 };
   
-
 
