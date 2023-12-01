@@ -10,6 +10,7 @@ const hpp = require('hpp');
 
 
 const cookieParser = require('cookie-parser');
+const cors = require('cors');
 
 
 // Importing AppError class
@@ -31,6 +32,11 @@ app.set ('views' , path.join(__dirname , 'views'));
 
 // -------- Global Middlewares --------
 // Serving static files
+// Implement CORS
+app.use(cors());
+app.options('*', cors());
+
+app.use(compression());
 app.use (express.static (path.join (__dirname , 'public')));
 
 
