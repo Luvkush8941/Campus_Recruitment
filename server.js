@@ -26,7 +26,7 @@ mongoose
   .catch((err) => console.log(err));   
 
 // For testing API's on POSTMAN
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 // Listening to the server
 app.listen(port , () => {
