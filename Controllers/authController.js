@@ -347,8 +347,6 @@ exports.updatePassword = async (req , res , next) => {
     
    } catch (err) {
 
-    console.log(err);
-
     res.status(500).json ({
 
        status : 'fail',
@@ -384,5 +382,4 @@ exports.deleteMe = async (req , res , next) => {
       })
    }
 }
-
 
