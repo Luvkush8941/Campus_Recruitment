@@ -75,6 +75,8 @@ exports.signUp = catchAsync(async (req, res, next) => {
 
 exports.login = catchAsync (async (req, res, next) => {
 
+    console.log("Hello from Login");
+
     // Using ES6 destructuring
     const { email, password } = req.body;
 
