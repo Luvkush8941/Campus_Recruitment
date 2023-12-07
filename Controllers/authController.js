@@ -56,21 +56,28 @@ exports.signUp = catchAsync(async (req, res, next) => {
       photo: req.body.photo
       
     });
-
-    // ---------- Lec_9 ------------
-    // So, we want to point on the userAccount so, that user can upload it photo.
-    // const url = 'http://127.0.0.1:3000/me';
-
-    // Works in both production and Development
-    const url = `${req.protocol}://${req.get('host')}/me`;
-
-    await new Email (newUser , url).sendWelcome();
+  
+    await new Email (newUser).sendWelcome();
 
     ///////////////////////
 
     createSendToken(newUser, 201, res);
     
   });
+
+exports.contactUs = catchAsync(async (req, res, next) => {
+
+  const userDetails = {
+
+    name: req.body.name,
+    email: req.body.email,
+    message: req.body.message,
+    
+  }
+
+  await new Email (userDetails).sendIssues();
+  
+});
 
 
 exports.login = catchAsync (async (req, res, next) => {
