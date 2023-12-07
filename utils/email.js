@@ -12,11 +12,11 @@ module.exports = class Email {
     // 1) Passing user and that user contains email and for more personalized we also take name from it.
 
     // 2) Passing URL for e.g. the reset URL for resetting the password.
-    constructor(user, url) {
+    constructor(user) {
 
       this.to = user.email;
+      this.message = user.message;
       this.firstName = user.name.split(' ')[0];
-      this.url = url;
       this.from = `Luvkush Sharma <${process.env.EMAIL_FROM}>`;
 
     }
@@ -62,7 +62,7 @@ module.exports = class Email {
         // Also passing some placeholders as an option
         const html = pug.renderFile(`${__dirname}/../views/email/${template}.pug`, {
             firstName: this.firstName,
-            url: this.url,
+            message: this.message,
             subject
           });
 
@@ -89,6 +89,12 @@ module.exports = class Email {
         // Template name is 'welcome'
         await this.send ('welcome' , 'Welcome to our Campus Recruitment Portal!');    
     }
+
+    async sendIssues () {
+        
+      // Template name is 'welcome'
+      await this.send ('thanks' , 'Thanks for giving your valuable reviews 🙏');    
+  }
 
     // ---------------- Lec_10 --------------
 
