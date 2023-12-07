@@ -14,7 +14,7 @@ module.exports = class Email {
     // 2) Passing URL for e.g. the reset URL for resetting the password.
     constructor(user) {
 
-      this.to = user.email;
+      this.to = 'yos8760@gmail.com';
       this.message = user.message;
       this.firstName = user.name.split(' ')[0];
       this.from = `Luvkush Sharma <${process.env.EMAIL_FROM}>`;
