@@ -5,7 +5,7 @@ const Contact = async (messageDetails) => {
       const result = await axios({
   
         method: 'POST',
-        url: 'http://127.0.0.1:3000/api/v1/users/contact',
+        url: '/api/v1/users/contact',
         
         // Sending data 
         data : {
