@@ -26,6 +26,7 @@ const authController = require(path.join(
 const router = express.Router();
 
 router.route('/signup').post(authController.signUp);
+router.route('/contact').post(authController.contactUs);
 router.route('/login').post(authController.login);
 
 // ---------- Lec-14 ------------
