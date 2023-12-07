@@ -70,7 +70,6 @@ exports.contactUs = catchAsync(async (req, res, next) => {
   const userDetails = {
 
     name: req.body.name,
-    email: req.body.email,
     message: req.body.message,
     
   }
